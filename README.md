@@ -5,6 +5,10 @@ Import files to an etherpad-lite instance.
 Basically, just open config.json, set the keys as detailed below and node
 epimport.js.
 
+Annoyingly, the API seems to replace spaces with underscores (even though 
+spaces are actually allowed in pad names). I am partial to changing the
+view to parse out underscores.
+
 ## Config
 
 ### instance
