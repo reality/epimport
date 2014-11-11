@@ -29,3 +29,7 @@ stick everything you want to upload in import/.
 The group ID to create your pads under. This can be a little difficult to get
 normally, I recommend using the ep_adminpads plugin to figure them out from the
 admin interface.
+
+### convert_html
+
+Convert what HTML is possible to markdown, strip the rest. Results vary.
