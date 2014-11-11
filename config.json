@@ -1,6 +1,6 @@
 {
-    "instance": "http://wherever.com",
-    "api_key": "",
-    "file_dir": "",
-    "user_group": ""
+    "instance": "http://example.com",
+    "api_key": "111",
+    "file_dir": "import",
+    "user_group": "g.whatever"
 }

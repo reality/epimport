@@ -20,9 +20,9 @@ var files = fs.readdirSync(config.file_dir),
     createPath = config.instance + '/api/1/createGroupPad';
 
 async.each(files, function(file, done) {
-    var content = fs.readFileSync(file, 'utf-8');
+    var content = fs.readFileSync(config.file_dir + '/' + file, 'utf-8');
 
-    request.post({
+    request.get({
         'url': createPath,
         'qs': {
             'apikey': config.api_key,
@@ -32,15 +32,16 @@ async.each(files, function(file, done) {
         },
         'json': true
     }, function(err, res, body) {
-        if(!err && response.statusCode === 200) {
+        if(!err && res.statusCode === 200) {
             if(body.code === 0) {
                 console.log('-> Uploaded ' + file);
             } else {
                 console.log('-> ERR: ' + body.message); 
             }
+            count++;
             done();
         } else {
-            console.log('-> Fatal ERR: ' + err);
+            console.log('-> Fatal ERR: ' + res.statusCode + ' - ' + err);
             process.exit(1);
         }
     });
