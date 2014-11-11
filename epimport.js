@@ -1,4 +1,4 @@
-// Import a bunch of HTML files into etherpad-lite
+// Import a bunch of files into etherpad-lite
 
 var _ = require('underscore')._,
     request = require('request'),
